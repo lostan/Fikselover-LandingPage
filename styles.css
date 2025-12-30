@@ -1,51 +1,51 @@
-/* Japandi Design Variables (Zen + Hygge) */
+/* Retro-Futuristic Design Variables (Tech Humanism) */
 :root {
-    /* Palette: Earth & Paper */
-    --md-background: #F9F7F2;
-    /* Warm Rice Paper / Off-White */
-    --md-surface: #FFFFFF;
-    /* Pure White */
-    --md-primary: #2C2C2C;
-    /* Soft Charcoal / Ink */
-    --md-primary-light: #595959;
-    /* Stone Grey */
+    /* Palette: Neon & Lunar Lounge */
+    --md-background: #0B0B15;
+    /* Deep Indigo / Void Black */
+    --md-surface: rgba(20, 20, 35, 0.8);
+    /* Semi-transparent Glass */
+    --md-primary: #E0E0FF;
+    /* Pale Phosphor White */
+    --md-primary-light: #A0A0C0;
+    /* Stardust Grey */
 
-    /* Accents: Nature Inspired */
-    --md-accent: #BC6C4A;
-    /* Muted Terracotta */
-    --md-accent-dark: #8F4F34;
-    /* Dark Clay */
-    --color-green: #5F6F52;
-    /* Deep Forest Green */
-    --color-ochre: #D9A55B;
-    /* Soft Ochre / Blonde Wood */
+    /* Accents: High Energy */
+    --md-accent: #FF5E00;
+    /* Sunset Orange */
+    --md-accent-dark: #CC4B00;
+
+    --color-cyan: #00FFFF;
+    /* Electric Cyan */
+    --color-violet: #7B00FF;
+    /* Deep Violet */
+    --color-grid: rgba(0, 255, 255, 0.1);
+    /* Subtle Grid Lines */
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Lato', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+    --font-mono: 'Space Mono', monospace;
 
-    --text-primary: #2C2C2C;
-    --text-secondary: #595959;
-    --text-hint: #8C8C8C;
+    --text-primary: #E0E0FF;
+    --text-secondary: #B0B0D0;
+    --text-hint: #606080;
 
     /* Spacing & Structure */
     --spacing-unit: 8px;
-    --container-max-width: 1100px;
-    /* Slightly tighter for focus */
+    --container-max-width: 1200px;
     --header-height: 90px;
 
-    /* Japandi "Framing" (Replaces heavy shadows) */
-    --elevation-1: 0 0 0 1px rgba(0, 0, 0, 0.05);
-    /* Subtle Outline */
-    --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.03);
-    /* Soft Drift */
-    --elevation-3: 0 8px 24px rgba(0, 0, 0, 0.04);
-    --elevation-4: 0 12px 32px rgba(0, 0, 0, 0.05);
+    /* Mechanical Effects */
+    --glow-cyan: 0 0 15px rgba(0, 255, 255, 0.4);
+    --glow-orange: 0 0 15px rgba(255, 94, 0, 0.4);
+    --border-glass: 1px solid rgba(0, 255, 255, 0.15);
 
-    /* Transitions (Liquid, Slow) */
-    --transition-fast: 300ms cubic-bezier(0.2, 0.0, 0.2, 1);
-    --transition-normal: 600ms cubic-bezier(0.22, 1, 0.36, 1);
-    /* Ease-out "drift" */
+    /* Transitions (Snappy, Precise) */
+    --transition-fast: 150ms cubic-bezier(0.1, 0.9, 0.2, 1);
+    /* Quick Snap */
+    --transition-normal: 300ms cubic-bezier(0.1, 0.9, 0.2, 1);
+    /* Mechanical Slide */
 }
 
 * {
@@ -56,14 +56,17 @@
 
 body {
     font-family: var(--font-body);
-    font-weight: 300;
-    /* Light/Airy */
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    /* Technical feel */
     background-color: var(--md-background);
     color: var(--text-primary);
-    line-height: 1.8;
-    /* Increased line-height for breathability */
+    line-height: 1.6;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
+    /* subtle scanline effect */
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
 }
 
 h1,
@@ -73,11 +76,14 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    margin-bottom: var(--spacing-unit);
     color: var(--md-primary);
-    font-weight: 400;
-    /* Elegant, not bold */
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    /* Cinematic spacing */
+    margin-bottom: var(--spacing-unit);
+    text-shadow: 0 0 10px rgba(224, 224, 255, 0.3);
+    /* Soft Glow */
 }
 
 p {
@@ -145,71 +151,115 @@ ul {
 }
 
 /* Components */
+/* Components */
 .card {
     background-color: var(--md-surface);
-    border-radius: 2px;
-    /* Sharper corners for timber-frame look */
-    /* Remove shadow, add subtle border */
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    /* Slightly radiused, mechanical */
     box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    transition: transform var(--transition-normal), border-color var(--transition-normal);
+    border: var(--border-glass);
+    transition: all var(--transition-fast);
+    /* Snappy */
     overflow: hidden;
+    position: relative;
 }
 
-/* Hover: Slight lift and warmer border, no ripple needed */
+/* Hover: Mechanical "Activation" */
 .card:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-ochre);
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--color-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+.card::before {
+    /* Tech scan bar on hover? or just a decorative corner */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid var(--color-cyan);
+    border-left: 2px solid var(--color-cyan);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 16px;
-    height: 36px;
+    padding: 0 24px;
+    height: 48px;
+    /* Taller, more tactile */
     min-width: 64px;
     border: none;
     border-radius: 4px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    /* Mechanical radius */
+    font-family: var(--font-heading);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.0892857143em;
+    letter-spacing: 0.1em;
     cursor: pointer;
-    transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
-    background-color: var(--md-primary);
+    background-color: var(--md-accent);
     color: white;
-    box-shadow: var(--elevation-2);
+    /* Hard shadow for depth (Switch look) */
+    box-shadow: 0 4px 0 var(--md-accent-dark);
+    margin-bottom: 4px;
+    /* To account for shadow */
 }
 
 .btn-primary:active {
-    box-shadow: var(--elevation-6);
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--md-accent-dark);
 }
 
 .btn-accent {
-    background-color: var(--md-accent);
-    color: white;
-    /* Changed from black to white for better contrast with orange */
-    box-shadow: var(--elevation-2);
+    background-color: var(--color-cyan);
+    color: #000;
+    /* Contrast for cyan */
+    box-shadow: 0 4px 0 #008F8F;
+    margin-bottom: 4px;
+}
+
+.btn-accent:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #008F8F;
 }
 
 .btn-text {
     background-color: transparent;
-    color: var(--md-primary);
+    color: var(--color-cyan);
+    border: 1px solid transparent;
 }
 
 .btn-text:hover {
-    background-color: rgba(63, 81, 181, 0.08);
-    /* Primary opacity 0.08 */
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 .btn-outlined {
     background-color: transparent;
-    border: 1px solid var(--text-hint);
+    border: 2px solid var(--md-primary);
     color: var(--md-primary);
+    box-shadow: 0 0 10px rgba(224, 224, 255, 0.1);
+}
+
+.btn-outlined:hover {
+    background-color: rgba(224, 224, 255, 0.1);
+    box-shadow: 0 0 15px rgba(224, 224, 255, 0.3);
 }
 
 /* App Bar */
@@ -531,18 +581,18 @@ ul {
     transform: scale(1.1);
 }
 
-/* Redesigned Hero Section (Japandi) */
+/* Retro-Future Hero */
 .hero-redesign {
     position: relative;
-    /* Increased height for "Sanctuary" feel */
     min-height: 700px;
-    /* Taller */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-top: calc(var(--header-height) - 20px);
     color: var(--text-primary);
+    border-bottom: 2px solid var(--md-accent);
+    /* Hard structural line */
 }
 
 .hero-bg-image {
@@ -554,17 +604,19 @@ ul {
     background-size: cover;
     background-position: center;
     z-index: 1;
-    /* Subtle zoom animation (Drifting) */
-    animation: drift 20s infinite alternate ease-in-out;
+    /* Cinematic Slow Pan/Zoom */
+    animation: panZoom 30s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.6;
+    /* Darken image to blend with scanning lines */
 }
 
-@keyframes drift {
-    from {
-        transform: scale(1);
+@keyframes panZoom {
+    0% {
+        transform: scale(1) translate(0, 0);
     }
 
-    to {
-        transform: scale(1.05);
+    100% {
+        transform: scale(1.1) translate(-2%, -2%);
     }
 }
 
@@ -574,11 +626,9 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Soft gradient instead of dark overlay */
-    background: linear-gradient(to bottom,
-            rgba(249, 247, 242, 0.4),
-            /* Rice paper tint */
-            rgba(249, 247, 242, 0));
+    /* Neon Haze Gradient */
+    background: radial-gradient(circle at center, rgba(123, 0, 255, 0.2) 0%, rgba(11, 11, 21, 0.8) 70%, #0B0B15 100%);
+    box-shadow: inset 0 0 100px #000;
     z-index: 2;
 }
 
@@ -598,9 +648,66 @@ ul {
     z-index: 3;
     display: flex;
     justify-content: center;
-    /* Center everything */
     width: 100%;
     padding: calc(var(--spacing-unit) * 4);
+    text-align: center;
+}
+
+.hero-text-card {
+    background: rgba(11, 11, 21, 0.7);
+    /* Dark Glass */
+    backdrop-filter: blur(4px);
+    padding: 60px;
+    max-width: 800px;
+    border: 1px solid var(--color-cyan);
+    /* Tech border */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Scan scanning line across card */
+.hero-text-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transform: skewX(-20deg);
+    animation: scan 6s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+.hero-text-card h1 {
+    font-size: 3.5rem;
+    color: var(--color-cyan);
+    margin-bottom: 24px;
+    text-shadow: var(--glow-cyan);
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.35rem;
+    color: var(--md-primary);
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-family: var(--font-body);
 }
 
 /* [Duplicate Hero styles removed] */
@@ -623,74 +730,86 @@ ul {
     transform: scale(1.05);
 }
 
-/* Testimonials (Japandi Minimalist) */
+/* Testimonials (Blueprint / Readout) */
 .testimonial-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    /* Increased gap */
 }
 
 .testimonial-card {
     padding: 40px;
-    /* Generous padding */
-    background: var(--md-surface);
-    border: 1px solid rgba(0, 0, 0, 0.04);
-    border-radius: 2px;
+    background: rgba(11, 11, 21, 0.6);
+    border: 1px solid rgba(123, 0, 255, 0.3);
+    /* Violet border for distinction */
+    border-radius: 4px;
     position: relative;
-    text-align: center;
-    /* Center align for zen feel */
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.testimonial-card::before {
+    /* Corner Accent */
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid var(--color-violet);
+    border-right: 2px solid var(--color-violet);
 }
 
 .testimonial-header {
     display: flex;
-    flex-direction: column;
-    /* Stack profile */
+    flex-direction: row;
     align-items: center;
     margin-bottom: 24px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
 }
 
 .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    /* Squared off */
     object-fit: cover;
-    margin-right: 0;
-    margin-bottom: 16px;
-    border: 1px solid var(--color-ochre);
-    /* Soft ochre border */
-    padding: 4px;
-    /* Space between border and image */
-    background: white;
+    margin-right: 16px;
+    margin-bottom: 0;
+    border: 1px solid var(--color-cyan);
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 .stars {
-    color: var(--color-ochre);
-    /* Use ochre instead of bright orange/amber */
-    letter-spacing: 4px;
-    /* Wide spacing */
-    margin-bottom: 16px;
+    color: var(--md-accent);
+    letter-spacing: 2px;
+    margin-bottom: 0;
     font-size: 0.9rem;
+    margin-left: auto;
+    /* Push to right */
+    text-shadow: 0 0 5px var(--md-accent);
 }
 
 .testimonial-text {
-    font-style: italic;
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
-    /* Use Serif for quotes */
+    font-style: normal;
+    color: var(--text-primary);
+    font-family: var(--font-body);
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .testimonial-text::before {
-    content: "“";
+    content: "> CODE: FEEDBACK";
     display: block;
-    font-size: 3rem;
-    color: rgba(0, 0, 0, 0.05);
-    /* Very subtle quote mark */
-    margin-bottom: -20px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-cyan);
+    margin-bottom: 12px;
+    opacity: 0.8;
 }
 
 /* Responsive */
