@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikselover - Din Handyman i Oslo</title>
+    <meta name="description"
+        content="Fikselover: Småjobber, maling, montering og flyttehjelp i Oslo. Raskt, enkelt og til fastpris.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- App Bar -->
+    <header class="app-bar elevation-4">
+        <div class="container app-bar-content">
+            <div class="logo">
+                <img src="assets/logo.png" alt="FikseLover Logo" style="height: 60px;">
+            </div>
+            <nav class="desktop-nav">
+                <a href="#services" class="nav-link">Tjenester</a>
+                <a href="#prices" class="nav-link">Priser</a>
+                <a href="#contact" class="nav-link">Kontakt</a>
+            </nav>
+            <button class="btn btn-accent mobile-hide">Bestill Nå</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-redesign">
+            <div class="hero-bg-image"
+                style="background-image: url('assets/hero_handyman_muscular_1767106087995.png');"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content-redesign">
+                <div class="hero-text-card card elevation-4">
+                    <h1>Din Handyvenn i Oslo</h1>
+                    <p class="hero-subtitle">Vi skrur til du er fornøyd.<br>Småjobber, montering og flyttehjelp uten
+                        stress.</p>
+                    <ul class="hero-benefits">
+                        <li><span class="material-icons check-icon">check_circle</span> Rask respons</li>
+                        <li><span class="material-icons check-icon">check_circle</span> Fastpris mulighet</li>
+                        <li><span class="material-icons check-icon">check_circle</span> Fornøydgaranti</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary ripple">Få et Tilbud</a>
+                        <a href="#services" class="btn btn-text ripple">Se Tjenester</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
+            <div class="container">
+                <h2 class="section-title">Hva trenger du hjelp til?</h2>
+                <div class="grid service-grid">
+
+                    <!-- Service 1 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <img src="assets/service_repair_faucet_muscular_final_1767105783979.png"
+                                alt="Småreparasjoner håndverker" style="object-position: top;">
+                        </div>
+                        <div class="card-content">
+                            <h3>Småreparasjoner</h3>
+                            <p>Tropping av kraner, justering av dører, oppheng av bilder og hyller.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <img src="assets/service_painting_muscular_1767105939707.png" alt="Maling av vegg">
+                        </div>
+                        <div class="card-content">
+                            <h3>Maling</h3>
+                            <p>Maling av vegger, tak, lister og dører. Raskt og pent resultat.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <img src="assets/service_assembly_1767105312065.png" alt="Montering av møbler">
+                        </div>
+                        <div class="card-content">
+                            <h3>Montering</h3>
+                            <p>IKEA-montering, skap, senger og garderober.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <img src="assets/service_moving_1767105326242.png" alt="Flyttehjelp">
+                        </div>
+                        <div class="card-content">
+                            <h3>Flyttehjelp</h3>
+                            <p>Bærehjelp, pakking og transport av mindre flyttelass.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <img src="assets/service_cleaning_1767105344695.png" alt="Flyttevask">
+                        </div>
+                        <div class="card-content">
+                            <h3>Flyttevask</h3>
+                            <p>Grundig utvask med fornøydgaranti. Vi tar oss av skrubbingen.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="card service-card elevation-1 ripple-target">
+                        <div class="card-image">
+                            <!-- Utilizing hero image as fallback/context for inspection or generic handy work -->
+                            <img src="assets/service_inspection_muscular_1767105954733.png" alt="Inspeksjon">
+                        </div>
+                        <div class="card-content">
+                            <h3>Inspeksjon</h3>
+                            <p>Sjekk av leilighet før utflytting. Unngå trekk i depositum.</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-text">Les mer</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="prices" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Enkel Prising</h2>
+                <div class="grid pricing-grid">
+
+                    <div class="card price-card elevation-2">
+                        <div class="price-header">
+                            <h3>Timepris</h3>
+                            <div class="price">790,- <span class="unit">NOK/time</span></div>
+                        </div>
+                        <ul class="price-features">
+                            <li><span class="material-icons">check</span> Minimum 2 timer</li>
+                            <li><span class="material-icons">check</span> Inkluderer kjøring</li>
+                            <li><span class="material-icons">check</span> For småjobber & montering</li>
+                        </ul>
+                        <div class="card-actions centered">
+                            <a href="#contact" class="btn btn-outlined">Bestill Time</a>
+                        </div>
+                    </div>
+
+                    <div class="card price-card elevation-4 featured">
+                        <div class="badge">Populært</div>
+                        <div class="price-header">
+                            <h3>Fastpris</h3>
+                            <div class="price">Fra 1200,-</div>
+                        </div>
+                        <ul class="price-features">
+                            <li><span class="material-icons">check</span> Avtalt på forhånd</li>
+                            <li><span class="material-icons">check</span> Ingen overraskelser</li>
+                            <li><span class="material-icons">check</span> Perfekt for maling & vask</li>
+                        </ul>
+                        <div class="card-actions centered">
+                            <a href="#contact" class="btn btn-primary">Få Tilbud</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Hva sier kundene?</h2>
+                <div class="grid testimonial-grid">
+                    <div class="card testimonial-card elevation-1">
+                        <div class="testimonial-header">
+                            <img src="assets/avatar_1_1767105371268.png" alt="Kunde" class="avatar">
+                            <div>
+                                <h4>Silje N.</h4>
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Fantastisk hjelp med flyttingen! Det gikk så raskt og effektivt.
+                            Anbefales på det sterkeste."</p>
+                    </div>
+
+                    <div class="card testimonial-card elevation-1">
+                        <!-- Placeholder using same avatar for now as generation limited -->
+                        <img src="assets/avatar_1_1767105371268.png" alt="Kunde" class="avatar"
+                            style="filter: hue-rotate(45deg);">
+                        <div class="testimonial-header">
+                            <div>
+                                <h4>Magnus O.</h4>
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Veldig fornøyd med malerjobben. Leiligheten ser helt ny ut før
+                            salg."</p>
+                    </div>
+
+                    <div class="card testimonial-card elevation-1">
+                        <!-- Placeholder using same avatar for now as generation limited -->
+                        <img src="assets/avatar_1_1767105371268.png" alt="Kunde" class="avatar"
+                            style="filter: hue-rotate(90deg);">
+                        <div class="testimonial-header">
+                            <div>
+                                <h4>Ingrid B.</h4>
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Monterte IKEA-garderoben min på null komma niks. Veldig hyggelig
+                            service."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-light">
+            <div class="container contact-container">
+                <div class="card contact-card elevation-3">
+                    <h2>Kontakt Oss</h2>
+                    <p>Send oss en melding, så svarer vi raskt!</p>
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <label for="name">Navn</label>
+                            <input type="text" id="name" name="name" required class="material-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">E-post</label>
+                            <input type="email" id="email" name="email" required class="material-input">
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Hva trenger du hjelp til?</label>
+                            <textarea id="message" name="message" rows="4" required class="material-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block ripple">Send Forespørsel</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer bg-dark">
+        <div class="container">
+            <p>&copy; 2025 Fikselover. Alle rettigheter reservert.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="https://wa.me/4700000000" class="fab elevation-6 ripple" aria-label="Kontakt på WhatsApp">
+        <span class="material-icons">chat</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
