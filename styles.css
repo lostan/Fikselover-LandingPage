@@ -264,8 +264,8 @@ ul {
 
 /* App Bar */
 .app-bar {
-    background-color: var(--md-primary);
-    color: white;
+    background-color: white;
+    color: var(--md-primary);
     height: var(--header-height);
     display: flex;
     align-items: center;
@@ -284,8 +284,12 @@ ul {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 20px;
-    font-weight: 500;
+}
+
+.logo-image {
+    height: 80px;
+    /* Slightly larger for visibility */
+    width: auto;
 }
 
 .logo-icon {
@@ -294,13 +298,15 @@ ul {
 
 .desktop-nav a {
     margin-left: 24px;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--md-primary);
+    /* Dark text for white header */
     font-weight: 500;
     transition: color var(--transition-fast);
 }
 
 .desktop-nav a:hover {
-    color: white;
+    color: var(--md-accent);
+    /* Accent color on hover */
 }
 
 .mobile-hide {
